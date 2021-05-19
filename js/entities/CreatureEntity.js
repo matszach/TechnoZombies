@@ -17,4 +17,16 @@ class CreatureEntity extends GameEntity {
         return this;
     }
 
+    damage(damage, ...args) {
+        this.onDamage(...args);
+        // TODO
+        if(this.viewRef.rng.chance(0.1)) {
+            this.destroy(...args);
+        }
+    }
+
+    onDamage(...args) {
+
+    }
+
 }

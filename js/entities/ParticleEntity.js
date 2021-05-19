@@ -8,14 +8,14 @@ class ParticleEntity extends GameEntity {
         this.adds(this.sprite);
         this.duration = new DurationCounter(opts.duration);
         this.moveAnimation.set(this.sprite, opts.moveAnimationBreakpoins);
+        this.moveSpeed += viewRef.rng.float(-opts.moveSpeedOffset, opts.moveSpeedOffset);
     }
 
     update() {
         this.traction(0.95); // TODO export this to templates ?
         this.rotate(0.04); // TODO export this to templates ?
         if(this.duration.tick().over()) {
-            this.expire();
-            this.hide();
+            this.destroy();
         }
     }
 

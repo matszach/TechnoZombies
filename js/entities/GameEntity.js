@@ -28,5 +28,15 @@ class GameEntity extends Mx.Container {
     getBoundingCircle() {
         return this.hitcircle;
     }
+    
+    destroy(...args) {
+        this.expire();
+        this.hide();
+        this.onDestroy(...args);
+    }
+
+    onDestroy(...args) {
+
+    }
 
 }

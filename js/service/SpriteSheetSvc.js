@@ -8,6 +8,7 @@ class SpriteSheetSvc {
     static green_laser = this._load('green_laser', 24, 24);
     static green_spark = this._load('green_spark', 24, 24);
     static background = this._load('background', 400, 225);
-    static zombie1 = this._load('zombie1', 24, 24);
+    static zombie_1 = this._load('zombie_1', 24, 24);
+    static blood_air_1 = this._load('blood_air_1', 24, 24);
 
 }

@@ -1,13 +1,13 @@
 class MovementAnimation {
 
     constructor(sprite, breakpoins) {
-        this.frame = 0;
+        this.frame = Math.random() * 1000;
         this.sprite = sprite;
         this.breakpoins = breakpoins;
     }
 
     set(sprite, breakpoins) {
-        this.frame = 0;
+        this.frame = Math.random() * 1000;
         this.sprite = sprite;
         this.breakpoins = breakpoins;
     }

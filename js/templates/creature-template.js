@@ -12,7 +12,7 @@ const CREATURE_TMPL = {
     },
     ZOMBIE_1: {
         hitCircleRadius: 30, 
-        spriteSheet: 'zombie1',
+        spriteSheet: 'zombie_1',
         shadowColor: '#000000',
         shadowBlur: 20,
         moveAnimationBreakpoins: [30, 60, 90, 120],

@@ -15,17 +15,16 @@ class ProjectileEntity extends GameEntity {
         if(this.expired) {
             return;
         }
-        // FIXME remov ethis test code
+        // FIXME remove this test code
         for(let m of this.viewRef.monsters.children) {
-            if(Mx.Geo.Collision.circleVsCircle(this.hitcircle, m.hitcircle)) {
-                m.expire();
-                m.hide();
+            if(!m.expired && Mx.Geo.Collision.circleVsCircle(this.hitcircle, m.hitcircle)) {
+                m.damage(0, this); // TODO damage calc here
+                this.destroy();
             }
         }
-        
+
         if(this.duration.tick().over()) {
-            this.expire();
-            this.hide();
+            this.destroy();
         }
     }
 
