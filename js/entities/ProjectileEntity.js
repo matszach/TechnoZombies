@@ -7,17 +7,32 @@ class ProjectileEntity extends GameEntity {
         this.sprite.setShadow(opts.shadowColor, opts.shadowBlur);
         this.adds(this.sprite);
         this.accuracy = opts.accuracy;
+        this.duration = new DurationCounter(opts.duration);
         this.moveAnimation.set(this.sprite, opts.moveAnimationBreakpoins);
     }
 
     update() {
-
+        if(this.expired) {
+            return;
+        }
+        // FIXME remov ethis test code
+        for(let m of this.viewRef.monsters.children) {
+            if(Mx.Geo.Collision.circleVsCircle(this.hitcircle, m.hitcircle)) {
+                m.expire();
+                m.hide();
+            }
+        }
+        
+        if(this.duration.tick().over()) {
+            this.expire();
+            this.hide();
+        }
     }
 
     fire(dir) {
         // TODO this is default, could be overriden and dir replaced by ...args
         dir += this.viewRef.rng.float(-this.accuracy, this.accuracy);
-        this.movePolar(dir, 60);
+        this.movePolar(dir, 40);
         this.acceleratePolar(dir, this.moveSpeed);
         return this;
     }

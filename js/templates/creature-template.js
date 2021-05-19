@@ -5,9 +5,20 @@ const CREATURE_TMPL = {
         shadowColor: '#000000',
         shadowBlur: 20,
         moveAnimationBreakpoins: [15, 30, 45, 60],
-        moveSpeed: 2,
+        moveSpeed: 3,
         cooldowns: {
-            laserAttack: 3
+            laserAttack: 4
+        }
+    },
+    ZOMBIE_1: {
+        hitCircleRadius: 30, 
+        spriteSheet: 'zombie1',
+        shadowColor: '#000000',
+        shadowBlur: 20,
+        moveAnimationBreakpoins: [30, 60, 90, 120],
+        moveSpeed: 0.5,
+        cooldowns: {
+            
         }
     }
 }

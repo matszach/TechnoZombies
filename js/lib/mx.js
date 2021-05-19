@@ -3,7 +3,7 @@
  * Collection of tools that can be used to create games  with JS and HTML5 canvas
  * @author Lukasz Kaszubowski (matszach)
  * @see https://github.com/matszach
- * @version 1.3.3
+ * @version 1.3.5
  */
 
 /** ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
@@ -849,6 +849,18 @@ const Mx = {
         constructor(x = 0, y = 0) {
             super(x, y);
             this.children = [];
+        }
+
+        cull() {
+            this.children = this.children.filter(e => !e.expired);
+            return this;
+        }
+
+        cullIfNthFrame(loop, n) {
+            if(loop.tickCount % n === 0) {
+                this.cull();
+            }
+            return this;
         }
 
         add(entity) {
