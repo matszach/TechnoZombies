@@ -941,7 +941,7 @@ const Mx = {
         }
 
         getBoundingRectangle(padding = this.hitboxPadding, backgroundColor = undefined, borderColor = 'red', borderThickness = 1) {
-            const initialChildRect = this.children[0].getBoundingRectangle();
+            const initialChildRect = (this.children[0] || new Mx.Geo.Rectangle(this.x, this.y, 0, 0)).getBoundingRectangle();
             let minX = initialChildRect.x;
             let minY = initialChildRect.y;
             let maxX = initialChildRect.x + initialChildRect.width;
@@ -979,15 +979,21 @@ const Mx = {
         }
 
         animate() {
+            super.animate();
             this.forChild(c => c.animate());
+            return this;
         }
         
         travel() {
+            super.travel();
             this.forChild(c => c.travel());
+            return this;
         }
 
         update() {
+            super.update();
             this.forChild(c => c.update());
+            return this;
         }
     
     },

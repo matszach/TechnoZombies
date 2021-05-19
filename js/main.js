@@ -1,0 +1,1 @@
+Mx.Game.create().toView(GameplayView)
