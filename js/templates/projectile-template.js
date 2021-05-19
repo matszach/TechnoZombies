@@ -1,7 +1,7 @@
 const PROJECTILE_TMPL = {
-    PLAYER_LASER_1 : {
+    PLAYER_LASER : {
         hitCircleRadius: 10, 
-        spriteSheet: 'player_laser_1',
+        spriteSheet: 'player_laser',
         shadowColor: '#00ff00',
         shadowBlur: 10,
         moveAnimationBreakpoins: [5, 10, 15, 20],

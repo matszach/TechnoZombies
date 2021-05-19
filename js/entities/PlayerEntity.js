@@ -2,6 +2,7 @@ class PlayerEntity extends CreatureEntity {
 
     constructor(x, y, viewRef, opts) {
         super(x, y, viewRef, opts);
+        this.laserAttack = new PlayerLaserAttackAbility(this, opts.cooldowns.laserAttack);
     }
 
     update() {
@@ -26,10 +27,7 @@ class PlayerEntity extends CreatureEntity {
             this.movePolar(phi, this.moveSpeed);
         }
         // attacks
-        if(mleft) {
-            const p = new ProjectileEntity(this.x, this.y, this.viewRef, PROJECTILE_TMPL.PLAYER_LASER_1).fire(mdir);
-            this.viewRef.projectiles.add(p);
-        }
+        this.laserAttack.handle([mdir], mleft);
     }
 
 }

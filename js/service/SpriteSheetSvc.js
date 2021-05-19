@@ -5,7 +5,7 @@ class SpriteSheetSvc {
     }
 
     static player = this._load('player', 24, 24);
-    static player_laser_1 = this._load('player_laser_1', 24, 24);
+    static player_laser = this._load('player_laser', 24, 24);
     static background = this._load('background', 400, 225);
 
 }

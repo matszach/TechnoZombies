@@ -15,6 +15,7 @@ class ProjectileEntity extends GameEntity {
     }
 
     fire(dir) {
+        // TODO this is default, could be overriden and dir replaced by ...args
         dir += this.viewRef.rng.float(-this.accuracy, this.accuracy);
         this.movePolar(dir, 60);
         this.acceleratePolar(dir, this.moveSpeed);
