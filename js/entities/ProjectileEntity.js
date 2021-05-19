@@ -11,7 +11,7 @@ class ProjectileEntity extends GameEntity {
     }
 
     update() {
-        // abstract
+
     }
 
     fire(dir) {
