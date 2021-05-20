@@ -6,7 +6,7 @@ class MonsterSpawner {
     }
 
     handle() {
-        if(this.rng.chance(0.004)) {
+        if(this.rng.chance(0.02)) {
             const m = new MonsterEntity(this.rng.float(-800, 800), this.rng.float(-450, 450), this.viewRef, CREATURE_TMPL.ZOMBIE_1);
             this.viewRef.monsters.add(m);
             return this;

@@ -12,14 +12,15 @@ class MonsterEntity extends CreatureEntity {
     }
 
     onDamage(source) {
-        const blood = new ParticleEntity(this.x, this.y, this.viewRef, PARTICLE_TMPL.BLOOD_AIR_1);
-        blood.fire(this.viewRef.rng.float(0, Math.PI * 2));
-        this.viewRef.airParticles.add(blood);
+        for(let i = 0; i < 2; i++) {
+            const blood = new ParticleEntity(this.x, this.y, this.viewRef, PARTICLE_TMPL.BLOOD_AIR_1);
+            blood.fire(this.viewRef.rng.float(0, Math.PI * 2));
+            this.viewRef.airParticles.add(blood);
+        }
     }
 
     onDestroy(source) {
-        console.log(source);
-        for(let i = 0; i < 10; i++) {
+        for(let i = 0; i < 15; i++) {
             const blood = new ParticleEntity(this.x, this.y, this.viewRef, PARTICLE_TMPL.BLOOD_AIR_1);
             const dir = source.sprite.rotation - Math.PI/2 + this.viewRef.rng.float(-0.5, 0.5);
             blood.fire(dir);

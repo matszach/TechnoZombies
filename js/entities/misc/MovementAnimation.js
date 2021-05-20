@@ -28,4 +28,8 @@ class MovementAnimation {
         }
     }
 
+    disable() {
+        this.tick = () => {};
+    }
+
 }

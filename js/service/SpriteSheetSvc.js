@@ -10,5 +10,6 @@ class SpriteSheetSvc {
     static background = this._load('background', 400, 225);
     static zombie_1 = this._load('zombie_1', 24, 24);
     static blood_air_1 = this._load('blood_air_1', 24, 24);
+    static blood_floor_1 = this._load('blood_floor_1', 24, 24);
 
 }
